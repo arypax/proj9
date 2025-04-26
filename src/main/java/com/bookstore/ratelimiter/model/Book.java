@@ -1,5 +1,7 @@
 package com.bookstore.ratelimiter.model;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -27,14 +29,14 @@ public class Book {
     private String description;
 
     @Column(precision = 10, scale = 2)
-    private Double price;
+    private BigDecimal price;
 
     @Column(name = "quantity")
     private Integer quantity;
 
     public Book() {}
 
-    public Book(String title, String author, String isbn, String description, Double price, Integer quantity) {
+    public Book(String title, String author, String isbn, String description, BigDecimal price, Integer quantity) {
         this.title = title;
         this.author = author;
         this.isbn = isbn;
@@ -84,11 +86,11 @@ public class Book {
         this.description = description;
     }
 
-    public Double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
     }
 
